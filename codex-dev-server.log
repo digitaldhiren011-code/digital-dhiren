@@ -1,0 +1,37 @@
+[2026-07-01T16:35:37.556Z] Starting dev server
+   ▲ Next.js 15.5.19
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.18.13:3000
+
+ ✓ Starting...
+ ✓ Ready in 7.1s
+ ○ Compiling / ...
+ ✓ Compiled / in 9s (1513 modules)
+ GET / 200 in 765ms
+ GET / 200 in 932ms
+ ⚠ Cross origin request detected from 127.0.0.1 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+ GET / 200 in 1816ms
+ ○ Compiling /contact ...
+ ✓ Compiled /contact in 3.5s (1526 modules)
+ GET /contact 200 in 5068ms
+ GET /contact?submitted=true 200 in 566ms
+ ○ Compiling /portfolio ...
+ ✓ Compiled /portfolio in 4s (1533 modules)
+ GET /portfolio 200 in 5206ms
+ ○ Compiling /services ...
+ ✓ Compiled /services in 1319ms (1538 modules)
+ GET /services 200 in 2266ms
+
+[2026-07-04T08:13:19.344Z] Starting dev server
+   ▲ Next.js 15.5.19
+   - Local:        http://127.0.0.1:3000
+   - Network:      http://127.0.0.1:3000
+
+ ✓ Starting...
+ ✓ Ready in 4.4s
+ ○ Compiling / ...
+ ✓ Compiled / in 2.5s (1513 modules)
+ GET / 200 in 2574ms
+ GET / 200 in 414ms
+ GET / 200 in 1096ms
