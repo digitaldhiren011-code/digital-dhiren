@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { ArrowUpRight, BadgeCheck, Brush, Film, Megaphone, WandSparkles } from "lucide-react";
+import { ArrowUpRight, BadgeCheck, Brush, Film, MapPin, Megaphone, PackageCheck, TrendingUp, WandSparkles } from "lucide-react";
 import Section from "@/components/section";
 import { portfolioItems } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Portfolio",
-  description: "Featured creative work across graphic design, video, motion, branding, and marketing."
+  description: "Nepal-focused agency portfolio across graphic design, video, motion, branding, and marketing."
 };
 
 const categories = [
@@ -22,8 +22,8 @@ export default function PortfolioPage() {
   return (
     <Section
       eyebrow="Portfolio"
-      title="Selected work across design, video, motion, branding, and marketing"
-      intro="A premium masonry-style gallery with hover previews, case study cues, and before/after presentation blocks."
+      title="Nepali market case studies for cafes, colleges, boutiques, travel, real estate, and events"
+      intro="Realistic agency-style showcases built around local business goals: launch awareness, better social media presence, stronger trust, and clearer customer action."
     >
       <div className="mb-8 flex flex-wrap gap-3">
         {categories.map((category) => (
@@ -37,17 +37,17 @@ export default function PortfolioPage() {
         ))}
       </div>
 
-      <div className="masonry">
-        {[...portfolioItems, ...portfolioItems.slice(0, 3)].map((item, index) => {
+      <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        {portfolioItems.map((item, index) => {
           const Icon = categoryIcons[item.category] || Brush;
 
           return (
             <div
               key={`${item.title}-${index}`}
-              className="group mb-4 break-inside-avoid overflow-hidden rounded-brand border border-white/10 bg-white/[0.045] transition duration-300 hover:-translate-y-1 hover:border-brand-accent/45 hover:shadow-glow"
+              className="group overflow-hidden rounded-brand border border-white/10 bg-white/[0.045] transition duration-300 hover:-translate-y-1 hover:border-brand-accent/45 hover:shadow-glow"
             >
-              <div className={`${index % 3 === 0 ? "h-80" : "h-64"} bg-gradient-to-br ${item.gradient} p-5`}>
-                <div className="flex h-full flex-col justify-between rounded-[20px] border border-white/25 bg-black/20 p-5 backdrop-blur-sm">
+              <div className={`h-72 bg-gradient-to-br ${item.gradient} p-5`}>
+                <div className="flex h-full flex-col justify-between rounded-[20px] border border-white/25 bg-black/25 p-5 backdrop-blur-sm">
                   <div className="flex items-center justify-between gap-3">
                     <span className="inline-flex w-fit items-center gap-2 rounded-full bg-white/20 px-3 py-1 text-xs font-bold text-white">
                       <Icon size={13} />
@@ -59,18 +59,37 @@ export default function PortfolioPage() {
                   </div>
                   <div>
                     <p className="text-sm text-white/75">{item.tag}</p>
-                    <h3 className="font-heading text-2xl font-extrabold">{item.title}</h3>
+                    <h3 className="mt-1 font-heading text-2xl font-extrabold leading-tight">{item.title}</h3>
                   </div>
                 </div>
               </div>
-              <div className="flex items-center justify-between p-5">
-                <div>
-                  <p className="font-bold text-white">Case Study</p>
-                  <p className="text-sm text-zinc-500">Before / After - Hover Preview</p>
+              <div className="space-y-4 p-5">
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <p className="font-bold text-white">Agency Showcase</p>
+                    <p className="mt-1 flex items-center gap-2 text-sm text-zinc-500">
+                      <MapPin size={14} className="text-brand-accent" />
+                      {item.location}
+                    </p>
+                  </div>
+                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-brand-accent/25 bg-brand-primary/10 text-brand-accent transition group-hover:bg-brand-primary/25">
+                    <ArrowUpRight size={17} />
+                  </span>
                 </div>
-                <span className="grid h-9 w-9 place-items-center rounded-full border border-brand-accent/25 bg-brand-primary/10 text-brand-accent transition group-hover:bg-brand-primary/25">
-                  <ArrowUpRight size={17} />
-                </span>
+                <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
+                  <p className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-brand-accent">
+                    <PackageCheck size={14} />
+                    Deliverables
+                  </p>
+                  <p className="text-sm leading-6 text-zinc-300">{item.deliverables}</p>
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+                  <p className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-emerald-300">
+                    <TrendingUp size={14} />
+                    Outcome
+                  </p>
+                  <p className="text-sm leading-6 text-zinc-300">{item.result}</p>
+                </div>
               </div>
             </div>
           );

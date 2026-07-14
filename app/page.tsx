@@ -9,23 +9,25 @@ import { benefits, brand, faqs, portfolioItems, process, services, testimonials 
 export default function HomePage() {
   return (
     <>
-      <section className="mx-auto grid min-h-[calc(100vh-5rem)] max-w-7xl items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_0.92fr] lg:px-8">
+      <section className="mx-auto grid max-w-7xl items-start gap-10 px-4 py-12 sm:items-center sm:px-6 sm:py-16 lg:min-h-[calc(100vh-5rem)] lg:grid-cols-[1fr_0.92fr] lg:gap-12 lg:px-8 lg:py-16">
         <Reveal>
           <p className="mb-5 inline-flex rounded-full border border-brand-accent/30 bg-brand-primary/15 px-4 py-2 text-xs font-bold uppercase tracking-[0.24em] text-brand-accent">
-            Premium Creative Studio
+            Nepal Focused Creative Agency
           </p>
-          <h1 className="font-heading text-5xl font-extrabold leading-tight text-white sm:text-6xl lg:text-7xl">
-            Transform Ideas Into Powerful Digital Experiences
+          <h1 className="max-w-xl font-heading text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-7xl">
+            Creative Agency for Nepal-Grown Brands
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-300">
-            Graphic Design • Video Editing • Marketing • Creative Production
+          <p className="mt-5 max-w-2xl text-base leading-7 text-zinc-300 sm:mt-6 sm:text-lg sm:leading-8">
+            Branding, social media design, reels, ads, and digital campaigns for cafes, colleges, boutiques, travel businesses, events, and local service brands.
           </p>
-          <div className="mt-8 flex flex-wrap gap-4">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
             <ButtonLink href="/portfolio">View Portfolio</ButtonLink>
             <ButtonLink href={brand.whatsapp} variant="ghost" icon={<MessageCircle size={17} />}>Contact on WhatsApp</ButtonLink>
           </div>
         </Reveal>
-        <HeroVisual />
+        <div className="hidden lg:block">
+          <HeroVisual />
+        </div>
       </section>
 
       <Section eyebrow="Services" title="Creative services built for brand growth" intro="From first impression to full launch, Digital Dhiren covers the visual and digital work your business needs.">
@@ -38,7 +40,11 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section eyebrow="Featured Work" title="Cinematic visuals, sharp systems, real outcomes">
+      <Section
+        eyebrow="Featured Work"
+        title="Showcase built around real Nepali business needs"
+        intro="A quick look at campaign systems, social content, and video work shaped for Kathmandu, Lalitpur, Pokhara, and nearby markets."
+      >
         <div className="grid gap-5 md:grid-cols-3">
           {portfolioItems.slice(0, 3).map((item) => (
             <div key={item.title} className="group overflow-hidden rounded-brand border border-white/10 bg-white/[0.04]">
@@ -51,9 +57,13 @@ export default function HomePage() {
                   </div>
                 </div>
               </div>
-              <div className="flex items-center justify-between p-5 text-sm text-zinc-300">
-                <span>Hover Preview • Case Study</span>
-                <ArrowRight className="transition group-hover:translate-x-1" size={17} />
+              <div className="space-y-3 p-5 text-sm text-zinc-300">
+                <p className="font-bold text-white">{item.location}</p>
+                <p className="leading-6 text-zinc-400">{item.deliverables}</p>
+                <div className="flex items-center justify-between border-t border-white/10 pt-3">
+                  <span>View agency showcase</span>
+                  <ArrowRight className="transition group-hover:translate-x-1" size={17} />
+                </div>
               </div>
             </div>
           ))}
@@ -86,7 +96,7 @@ export default function HomePage() {
         <div className="grid gap-5 md:grid-cols-3">
           {testimonials.map((item) => (
             <div key={item.name} className="glass rounded-brand p-6">
-              <p className="leading-8 text-zinc-300">“{item.quote}”</p>
+              <p className="leading-8 text-zinc-300">"{item.quote}"</p>
               <p className="mt-6 font-bold text-white">{item.name}</p>
               <p className="text-sm text-zinc-500">{item.role}</p>
             </div>

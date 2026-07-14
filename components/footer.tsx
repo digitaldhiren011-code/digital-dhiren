@@ -23,13 +23,21 @@ export default function Footer() {
         <div>
           <p className="mb-4 text-sm font-bold uppercase tracking-[0.24em] text-brand-accent">Contact</p>
           <div className="grid gap-3 text-sm text-zinc-300">
-            <a className="flex items-center gap-3 hover:text-white" href={`tel:${brand.phone.replace(/\s/g, "")}`}><Phone size={16} /> {brand.phone}</a>
-            <a className="flex items-center gap-3 hover:text-white" href={`mailto:${brand.email}`}><Mail size={16} /> {brand.email}</a>
-            <span className="flex items-center gap-3"><MapPin size={16} /> {brand.location}</span>
+            <a className="flex items-center gap-3 hover:text-white" href={`tel:${brand.phone.replace(/\s/g, "")}`}>
+              <Phone size={16} /> {brand.phone}
+            </a>
+            <a className="flex items-center gap-3 hover:text-white" href={`mailto:${brand.email}`}>
+              <Mail size={16} /> {brand.email}
+            </a>
+            <span className="flex items-center gap-3">
+              <MapPin size={16} /> {brand.location}
+            </span>
           </div>
         </div>
       </div>
-      <div className="border-t border-white/10 py-5 text-center text-xs text-zinc-500">© {new Date().getFullYear()} Digital Dhiren. All rights reserved.</div>
+      <div className="border-t border-white/10 py-5 text-center text-xs text-zinc-500">
+        Copyright {new Date().getFullYear()} Digital Dhiren. All rights reserved.
+      </div>
     </footer>
   );
 }
