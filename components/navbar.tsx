@@ -12,7 +12,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-brand-dark/75 backdrop-blur-2xl">
-      <nav className="mx-auto flex h-28 max-w-7xl items-center justify-between px-4 sm:px-6 lg:h-32 lg:px-8">
+      <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:h-22 sm:px-6 lg:h-24 lg:px-8">
         <Link href="/" className="flex items-center gap-3" aria-label="Digital Dhiren home">
           <DigitalDhirenLogo />
         </Link>
