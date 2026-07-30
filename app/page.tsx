@@ -21,7 +21,7 @@ export default function HomePage() {
             Branding, social media design, reels, ads, and digital campaigns for cafes, colleges, boutiques, travel businesses, events, and local service brands.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
-            <ButtonLink href="/portfolio">View Portfolio</ButtonLink>
+            <ButtonLink href="/portfolio" size="cta">View Portfolio</ButtonLink>
             <ButtonLink href={brand.whatsapp} variant="ghost" icon={<MessageCircle size={17} />}>Contact on WhatsApp</ButtonLink>
           </div>
         </Reveal>
