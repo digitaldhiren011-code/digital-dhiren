@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { brand, navItems } from "@/lib/site";
+import { navItems } from "@/lib/site";
 import ButtonLink from "@/components/button-link";
 import DigitalDhirenLogo from "@/components/digital-dhiren-logo";
 
@@ -15,10 +15,6 @@ export default function Navbar() {
       <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3" aria-label="Digital Dhiren home">
           <DigitalDhirenLogo />
-          <span>
-            <span className="block font-heading text-lg font-extrabold text-white">{brand.name}</span>
-            <span className="block text-xs text-zinc-400">{brand.tagline}</span>
-          </span>
         </Link>
 
         <div className="hidden items-center gap-7 lg:flex">
