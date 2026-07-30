@@ -9,7 +9,7 @@ export default function DigitalDhirenLogo() {
         fill
         priority
         sizes="(max-width: 640px) 220px, (max-width: 1024px) 260px, 300px"
-        className="object-cover object-center"
+        className="object-contain object-center p-1"
       />
     </span>
   );
